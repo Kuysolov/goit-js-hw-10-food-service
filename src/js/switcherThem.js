@@ -5,17 +5,19 @@ const Theme = {
   DARK: 'dark-theme',
 };
 
+const { LIGHT, DARK } = Theme
+
 switcher.addEventListener('change',  onChangeTheme);
 
 function  onChangeTheme({ target }) {
     const { checked } = target
    
     if (checked) {
-        body.classList.replace(Theme.LIGHT, Theme.DARK);
-        localStorage.setItem("theme", Theme.DARK);
+        body.classList.replace(LIGHT, DARK);
+        localStorage.setItem("theme", DARK);
     } else {
-        body.classList.replace(Theme.DARK, Theme.LIGHT);
-      localStorage.setItem("theme", Theme.LIGHT);
+        body.classList.replace(DARK, LIGHT);
+      localStorage.setItem("theme", LIGHT);
     }
     
     
@@ -25,8 +27,10 @@ function  onChangeTheme({ target }) {
 
 function getCurrentTheme() {
     const selectedTheme = localStorage.getItem("theme");
-    if (selectedTheme) {switcher.checked = selectedTheme === Theme.DARK}
-    return selectedTheme ? selectedTheme : Theme.LIGHT;
+  if (selectedTheme) {
+    switcher.checked = selectedTheme === DARK
+  }
+    return selectedTheme ? selectedTheme : LIGHT;
 }
 
 // function initTheme() {  }
