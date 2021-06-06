@@ -17,7 +17,7 @@ function  onChangeTheme({ target }) {
         localStorage.setItem("theme", DARK);
     } else {
         body.classList.replace(DARK, LIGHT);
-      localStorage.setItem("theme", LIGHT);
+        localStorage.setItem("theme", LIGHT);
     }
     
     
